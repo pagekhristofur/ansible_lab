@@ -3,9 +3,9 @@
     hosts: servers
     become: true
     tasks:
-  - name: ensure nano is on machine
-    yum:
-       name: nano
-       state: latest
-  - name: run echo command
-    command: /bin/echo Hello Ansible World!
+    - name: ensure nano is on machine
+      yum:
+         name: nano
+         state: latest
+    - name: run echo command
+      command: /bin/echo Hello Ansible World!
