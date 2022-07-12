@@ -1,0 +1,12 @@
+- name: Update the webserver
+  hosts: servers
+  become: yes
+  tasks:
+  - name: Copy index page
+      copy:
+        src: /etc/ansible/files/index.html
+        dest: /var/www/html/
+  - name: ensure httpd is running
+    service:
+      name: httpd
+      state: started
